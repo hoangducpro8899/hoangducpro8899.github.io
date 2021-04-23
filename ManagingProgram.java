@@ -7,10 +7,7 @@ public class ManagingProgram {
         Menu menu = new Menu();
         Menu menu2 = new Menu();
         menu.add("Load data from file");
-        menu.add("Add new 0-legged animals");
-        menu.add("Add new bipedal and flightness animals");
-        menu.add("Add new bipedal and flying animals");
-        menu.add("Add new 4-legged animals");
+        menu.add("Add new animal");
         menu.add("Update animal information");
         menu.add("Delete animal");
         menu.add("Search animal");
@@ -19,7 +16,7 @@ public class ManagingProgram {
         menu.add("Exit");
         
         // Managing program
-        int choice, choice2, choice3;
+        int choice, choice1, choice2, choice3;
         AnimalList list = new AnimalList();
         String fName = "SE140619.txt";
         do {
@@ -31,19 +28,33 @@ public class ManagingProgram {
                 case 1: list.readFile(fName);
                         list.printAll();
                         break;
-                case 2: list.add0Leg();
+                case 2: do {
+                            menu2.remove(menu2);
+                            System.out.println("\n----- Add animal menu -----");
+                            menu2.add("Add new 0-legged animals");
+                            menu2.add("Add new bipedal and flightness animals");
+                            menu2.add("Add new bipedal and flying animals");
+                            menu2.add("Add new 4-legged animals");
+                            menu2.add("Exit add menu");
+                            choice1 = menu2.getChoice();
+                            switch(choice1) {
+                                case 1: list.add0Leg();
+                                        break;
+                                case 2: list.addBipedal();
+                                        break;
+                                case 3: list.addBipedalFlying();
+                                        break;
+                                case 4: list.add4Leg();
+                                        break;
+                            }
+                        } while (choice1 != 5);
+                        System.out.println("");
                         break;
-                case 3: list.addBipedal();
+                case 3: list.update();
                         break;
-                case 4: list.addBipedalFlying();
+                case 4: list.remove();
                         break;
-                case 5: list.add4Leg();
-                        break;
-                case 6: list.update();
-                        break;
-                case 7: list.remove();
-                        break;
-                case 8: do {
+                case 5: do {
                             menu2.removeAll(menu2);
                             System.out.println("\n-----Search Menu-----");
                             menu2.add("Search animals by Name");
@@ -60,7 +71,7 @@ public class ManagingProgram {
                         System.out.println("");
                         break;
                         
-                case 9: do {
+                case 6: do {
                             menu2.removeAll(menu2);
                             System.out.println("\n-----Show Animal List-----");
                             menu2.add("Show animals by type");
@@ -76,13 +87,13 @@ public class ManagingProgram {
                         } while (choice3 != 3);
                         System.out.println("");
                         break;
-                case 10:list.SaveToFile(fName);
+                case 7:list.SaveToFile(fName);
                         break;
-                case 11:System.out.println("---------- GOOD BYE ----------");
+                case 8:System.out.println("---------- GOOD BYE ----------");
                         cont = false;
                         break;
             }
-        } while (choice != 11);
+        } while (choice != 8);
     }
     
 }

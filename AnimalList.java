@@ -5,9 +5,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -44,10 +42,12 @@ public class AnimalList {
             pos = find(newId);
             if (pos >= 0)
                 System.out.println("Animal ID already exists");
-        }while (pos >= 0);
+        }while (pos >= 0 || newId.isEmpty());
         
-        System.out.print("Enter animal's name: ");
-        newName = sc.nextLine();
+        do {
+            System.out.print("Enter animal's name: ");
+            newName = sc.nextLine();
+        } while (newName.isEmpty());
         
         do {
             System.out.print("Enter animal's weight: ");
@@ -60,21 +60,23 @@ public class AnimalList {
         System.out.println("*** Animal description ***");
         sc.nextLine();
         
-        System.out.print("Enter animal's color: ");
-        newColor = sc.nextLine();
+        do {
+            System.out.print("Enter animal's color: ");
+            newColor = sc.nextLine();
+        } while(newColor.isEmpty());
             
         do {
             System.out.print("Can this animal creep ?(yes/no) ");
             newCreep = sc.nextLine().toLowerCase();
             if (!newCreep.equalsIgnoreCase("Yes") && !newCreep.equalsIgnoreCase("No"))
-                System.out.println("You must enter yes or no");
+                System.out.println("--> You must enter yes or no");
         } while (!newCreep.equalsIgnoreCase("Yes") && !newCreep.equalsIgnoreCase("No"));
                             
         do {
             System.out.print("Is this animal poisonous ?(yes/no) ");
             newPoisonous = sc.nextLine().toLowerCase();
             if (!newPoisonous.equalsIgnoreCase("Yes") && !newPoisonous.equalsIgnoreCase("No"))
-                System.out.println("You must enter yes or no");
+                System.out.println("--> You must enter yes or no");
         } while (!newPoisonous.equalsIgnoreCase("Yes") && !newPoisonous.equalsIgnoreCase("No"));
             
         //Add animal to list
@@ -100,10 +102,12 @@ public class AnimalList {
             pos = find(newId);
             if (pos >= 0)
                 System.out.println("Animal ID already exists");
-        }while (pos >= 0);
+        }while (pos >= 0 || newId.isEmpty());
         
-        System.out.print("Enter animal's name: ");
-        newName = sc.nextLine();
+        do {
+            System.out.print("Enter animal's name: ");
+            newName = sc.nextLine();
+        } while (newName.isEmpty());
         
         do {
             System.out.print("Enter animal's weight: ");
@@ -116,20 +120,26 @@ public class AnimalList {
         System.out.println("*** Animal description ***");
         sc.nextLine();
         
-        System.out.print("Enter animal's appearance: ");
-        newAppearance = sc.nextLine();
+        do {
+            System.out.print("Enter animal's appearance: ");
+            newAppearance = sc.nextLine();
+        } while(newAppearance.isEmpty());
         
-        System.out.print("Enter animal's color: ");
-        newColor = sc.nextLine();
+        do {
+            System.out.print("Enter animal's color: ");
+            newColor = sc.nextLine();
+        } while(newColor.isEmpty());
         
-        System.out.print("Enter animal's movement type: ");
-        newMovement = sc.nextLine();
+        do {
+            System.out.print("Enter animal's movement type: ");
+            newMovement = sc.nextLine();
+        } while(newMovement.isEmpty());
         
         do {
             System.out.print("Does this animal have Swings ?(yes/no) ");
             newSwing = sc.nextLine().toLowerCase();
             if (!newSwing.equalsIgnoreCase("Yes") && !newSwing.equalsIgnoreCase("No"))
-                System.out.println("You must enter yes or no");
+                System.out.println("--> You must enter yes or no");
         } while (!newSwing.equalsIgnoreCase("Yes") && !newSwing.equalsIgnoreCase("No"));
             
         //Add animal to list
@@ -155,37 +165,41 @@ public class AnimalList {
             pos = find(newId);
             if (pos >= 0)
                 System.out.println("Animal ID already exists");
-        }while (pos >= 0);
+        }while (pos >= 0 || newId.isEmpty());
         
-        System.out.print("Enter animal's name: ");
-        newName = sc.nextLine();
+        do {
+            System.out.print("Enter animal's name: ");
+            newName = sc.nextLine();
+        } while (newName.isEmpty());
         
         do {
             System.out.print("Enter animal's weight: ");
             newWeight = sc.nextFloat();
             if (newWeight <= 0)
-                System.out.println("Weight must more than 0");
+                System.out.println("--> Weight must more than 0");
         } while (newWeight <= 0);
             
         //Enter animal description
         System.out.println("*** Animal description ***");
         sc.nextLine();
         
-        System.out.print("Enter animal's character: ");
-        newCharacter = sc.nextLine();
+        do {
+            System.out.print("Enter animal's character: ");
+            newCharacter = sc.nextLine();
+        } while(newCharacter.isEmpty());
         
         do {
             System.out.print("Does this animal have Swings ?(yes/no) ");
             newSwing = sc.nextLine().toLowerCase();
             if (!newSwing.equalsIgnoreCase("Yes") && !newSwing.equalsIgnoreCase("No"))
-                System.out.println("You must enter yes or no");
+                System.out.println("--> You must enter yes or no");
         } while (!newSwing.equalsIgnoreCase("Yes") && !newSwing.equalsIgnoreCase("No"));
         
         do {
             System.out.print("Does this animal can fly ?(yes/no) ");
             newFly = sc.nextLine().toLowerCase();
             if (!newFly.equalsIgnoreCase("Yes") && !newFly.equalsIgnoreCase("No"))
-                System.out.println("You must enter yes or no");
+                System.out.println("--> You must enter yes or no");
         } while (!newFly.equalsIgnoreCase("Yes") && !newFly.equalsIgnoreCase("No"));
             
         //Add animal to list
@@ -211,10 +225,13 @@ public class AnimalList {
             pos = find(newId);
             if (pos >= 0)
                 System.out.println("Animal ID already exists");
-        }while (pos >= 0);
+            
+        }while (pos >= 0 || newId.isEmpty());
         
-        System.out.print("Enter animal's name: ");
-        newName = sc.nextLine();
+        do {
+            System.out.print("Enter animal's name: ");
+            newName = sc.nextLine();
+        } while (newName.isEmpty());
         
         do {
             System.out.print("Enter animal's weight: ");
@@ -227,24 +244,28 @@ public class AnimalList {
         System.out.println("*** Animal description ***");
         sc.nextLine();
         
-        System.out.print("Enter animal's danger: ");
-        newDanger = sc.nextLine();
+        do {
+            System.out.print("Enter animal's danger: ");
+            newDanger = sc.nextLine();
+        } while (newDanger.isEmpty());
         
-        System.out.print("Enter animal's food: ");
-        newFood = sc.nextLine();
+        do {
+            System.out.print("Enter animal's food: ");
+            newFood = sc.nextLine();
+        } while (newFood.isEmpty());
         
         do {
             System.out.print("Can this animal run ?(yes/no) ");
             newRun = sc.nextLine().toLowerCase();
             if (!newRun.equalsIgnoreCase("Yes") && !newRun.equalsIgnoreCase("No"))
-                System.out.println("You must enter yes or no");
+                System.out.println("--> You must enter yes or no");
         } while (!newRun.equalsIgnoreCase("Yes") && !newRun.equalsIgnoreCase("No"));
         
         do {
             System.out.print("Can this animal growl ?(yes/no) ");
             newGrowl = sc.nextLine().toLowerCase();
             if (!newGrowl.equalsIgnoreCase("Yes") && !newGrowl.equalsIgnoreCase("No"))
-                System.out.println("You must enter yes or no");
+                System.out.println("--> You must enter yes or no");
         } while (!newGrowl.equalsIgnoreCase("Yes") && !newGrowl.equalsIgnoreCase("No"));
             
         //Add animal to list
@@ -252,6 +273,135 @@ public class AnimalList {
         System.out.println("--> Added successfully !!!\n");
     }
     
+    //Update no legged animals
+    public void update0Legged(int pos) {
+        Animal pet = list.get(pos);
+        No_Legged save = (No_Legged) pet;
+        String newColor, newCreep, newPoisonous;
+        sc.nextLine();
+        
+        System.out.print("Enter animal's color: ");
+        newColor = sc.nextLine();
+        if (newColor != null && !newColor.isEmpty())
+            save.setColor(newColor);
+        
+        do {
+            System.out.print("Can this animal creep ?(yes/no) ");
+            newCreep = sc.nextLine().toLowerCase();
+            if (!newCreep.equalsIgnoreCase("Yes") && !newCreep.equalsIgnoreCase("No"))
+                System.out.println("--> You must enter yes or no");
+            else
+                save.setCreep(newCreep);
+        } while (!newCreep.equalsIgnoreCase("Yes") && !newCreep.equalsIgnoreCase("No"));
+                            
+        do {
+            System.out.print("Is this animal poisonous ?(yes/no) ");
+            newPoisonous = sc.nextLine().toLowerCase();
+            if (!newPoisonous.equalsIgnoreCase("Yes") && !newPoisonous.equalsIgnoreCase("No"))
+                System.out.println("--> You must enter yes or no");
+            else
+                save.setPoisonous(newPoisonous);
+        } while (!newPoisonous.equalsIgnoreCase("Yes") && !newPoisonous.equalsIgnoreCase("No"));
+    }
+    
+    //Update bipedal and flightness animals
+    public void updateBipedal(int pos) {
+        Animal pet = list.get(pos);
+        Bipedal_Flightless save = (Bipedal_Flightless) pet;
+        String newAppearance, newColor, newMovement, newSwing;
+        sc.nextLine();
+        
+        System.out.print("Enter animal's appearance: ");
+        newAppearance = sc.nextLine();
+        if (newAppearance != null && !newAppearance.isEmpty())
+            save.setAppearance(newAppearance);
+        
+        System.out.print("Enter animal's color: ");
+        newColor = sc.nextLine();
+        if (newColor != null && !newColor.isEmpty())
+            save.setColor(newColor);
+        
+        System.out.print("Enter animal's movement type: ");
+        newMovement = sc.nextLine();
+        if (newMovement != null && !newMovement.isEmpty())
+            save.setMovement(newMovement);
+                            
+        do {
+            System.out.print("Does this animal have Swings ?(yes/no) ");
+            newSwing = sc.nextLine().toLowerCase();
+            if (!newSwing.equalsIgnoreCase("Yes") && !newSwing.equalsIgnoreCase("No"))
+                System.out.println("--> You must enter yes or no");
+            else
+                save.setSwing(newSwing);
+        } while (!newSwing.equalsIgnoreCase("Yes") && !newSwing.equalsIgnoreCase("No"));
+    }
+    
+    //Update bipedal and flying animals
+    public void updateBipedalFlying(int pos) {
+        Animal pet = list.get(pos);
+        Bipedal_Flying save = (Bipedal_Flying) pet;
+        String newCharacter, newSwing, newFly;
+        sc.nextLine();
+        
+        System.out.print("Enter animal's character: ");
+        newCharacter = sc.nextLine();
+        if (newCharacter != null && !newCharacter.isEmpty())
+            save.setCharacter(newCharacter);
+        
+        do {
+            System.out.print("Does this animal have Swings ?(yes/no) ");
+            newSwing = sc.nextLine().toLowerCase();
+            if (!newSwing.equalsIgnoreCase("Yes") && !newSwing.equalsIgnoreCase("No"))
+                System.out.println("--> You must enter yes or no");
+            else
+                save.setSwing(newSwing);
+        } while (!newSwing.equalsIgnoreCase("Yes") && !newSwing.equalsIgnoreCase("No"));
+                            
+        do {
+            System.out.print("Does this animal can fly ?(yes/no) ");
+            newFly = sc.nextLine().toLowerCase();
+            if (!newFly.equalsIgnoreCase("Yes") && !newFly.equalsIgnoreCase("No"))
+                System.out.println("--> You must enter yes or no");
+            else
+                save.setFly(newFly);
+        } while (!newFly.equalsIgnoreCase("Yes") && !newFly.equalsIgnoreCase("No"));
+    }
+    
+    //Update four legged animals
+    public void update4Legged(int pos) {
+        Animal pet = list.get(pos);
+        Four_Legged save = (Four_Legged) pet;
+        String newDanger, newFood, newRun, newGrowl;
+        sc.nextLine();
+        
+        System.out.print("Enter animal's danger: ");
+        newDanger = sc.nextLine();
+        if (newDanger != null && !newDanger.isEmpty())
+            save.setDanger(newDanger);
+        
+        System.out.print("Enter animal's food: ");
+        newFood = sc.nextLine();
+        if (newFood != null && !newFood.isEmpty())
+            save.setFood(newFood);
+        
+        do {
+            System.out.print("Can this animal run ?(yes/no) ");
+            newRun = sc.nextLine().toLowerCase();
+            if (!newRun.equalsIgnoreCase("Yes") && !newRun.equalsIgnoreCase("No"))
+                System.out.println("--> You must enter yes or no");
+            else
+                save.setRun(newRun);
+        } while (!newRun.equalsIgnoreCase("Yes") && !newRun.equalsIgnoreCase("No"));
+                            
+        do {
+            System.out.print("Can this animal growl ?(yes/no) ");
+            newGrowl = sc.nextLine().toLowerCase();
+            if (!newGrowl.equalsIgnoreCase("Yes") && !newGrowl.equalsIgnoreCase("No"))
+                System.out.println("--> You must enter yes or no");
+            else
+                save.setGrowl(newGrowl);
+        } while (!newGrowl.equalsIgnoreCase("Yes") && !newGrowl.equalsIgnoreCase("No"));
+    }
     
     //Update animal information
     public void update() {
@@ -261,7 +411,7 @@ public class AnimalList {
         }
         
         String code;
-        System.out.println("\n----- UPDATE AN ANIMAL -----");
+        System.out.println("\n---------- UPDATE AN ANIMAL ----------");
         System.out.print("Enter ID of animal you want to update: ");
         code = sc.nextLine().toUpperCase();
         
@@ -271,19 +421,32 @@ public class AnimalList {
         if (pos<0)
             System.out.println("--> Animal ID is not found !\n");
         else {
+            list.get(pos).show();
+            System.out.println("----- Enter New Information -----");
             System.out.print("Enter animal's name: ");
             newName = sc.nextLine();
-            list.get(pos).setName(newName);
+            if (newName != null && !newName.isEmpty())
+                list.get(pos).setName(newName);
 
             do {
                 System.out.print("Enter animal's weight: ");
                 newWeight = sc.nextFloat();
                 if (newWeight <= 0)
-                    System.out.println("Weight must more than 0");
+                    System.out.println("--> Weight must more than 0");
             } while (newWeight <= 0);
-            list.get(pos).setWeight(newWeight);
+            if (newWeight > 0)
+                list.get(pos).setWeight(newWeight);
             
-            System.out.println("--> Update successfully !!!\n");
+            if (list.get(pos).category == 1)
+                update0Legged(pos);
+            else if (list.get(pos).category == 2)
+                updateBipedal(pos);
+            else if (list.get(pos).category == 3)
+                updateBipedalFlying(pos);
+            else if (list.get(pos).category == 4)
+                update4Legged(pos);
+            
+            System.out.println("\n--> Update successfully !!!");
             list.get(pos).show();
         }
     }
@@ -403,6 +566,7 @@ public class AnimalList {
     public void readFile(String fName) {
         //Read from file and load to UserList
         try {
+            list.clear();
             File f = new File(fName);
             if (!f.exists()) return;
             FileReader fr = new FileReader(f);
@@ -457,14 +621,39 @@ public class AnimalList {
           
         try {
             File f = new File("SE140619.txt");
-            FileWriter fw = new FileWriter(f);
+            FileWriter fw = new FileWriter(f, true);
             BufferedWriter bw = new BufferedWriter(fw);
-            for (Animal x: list) {
-                if (x.getCategory() == 1) 
-                    bw.write(x.getId() + ", " + x.getName() + ", " + x.getWeight() + ", " + x.getCategory() + ", " + "\n");
+            
+            for (int i=0; i<list.size(); i++) {
+                if (list.get(i).category == 1) {
+                    Animal pet = list.get(i);
+                    No_Legged save1 = (No_Legged) pet;
+                    bw.write(list.get(i).id + ", " + list.get(i).name + ", " + list.get(i).weight + ", " + list.get(i).category + ", " + 
+                            save1.getColor() + ", " + save1.getCreep() + ", " + save1.getPoisonous() + "\n");
+                }
+                else if (list.get(i).category == 2) {
+                    Animal pet = list.get(i);
+                    Bipedal_Flightless save2 = (Bipedal_Flightless) pet;
+                    bw.write(list.get(i).id + ", " + list.get(i).name + ", " + list.get(i).weight + ", " + list.get(i).category + ", " + 
+                            save2.getAppearance() + ", " + save2.getColor() + ", " + save2.getMovement() + ", " + save2.getSwing() + "\n");
+                }
+                else if (list.get(i).category == 3) {
+                    Animal pet = list.get(i);
+                    Bipedal_Flying save3 = (Bipedal_Flying) pet;
+                    bw.write(list.get(i).id + ", " + list.get(i).name + ", " + list.get(i).weight + ", " + list.get(i).category + ", " + 
+                            save3.getCharacter() + ", " + save3.getSwing() + ", " + save3.getFly() + "\n");
+                }
+                else if (list.get(i).category == 4) {
+                    Animal pet = list.get(i);
+                    Four_Legged save4 = (Four_Legged) pet;
+                    bw.write(list.get(i).id + ", " + list.get(i).name + ", " + list.get(i).weight + ", " + list.get(i).category + ", " + 
+                            save4.getDanger() + ", " + save4.getFood() + ", " + save4.getRun() + ", " + save4.getGrowl() + "\n");
+                }
             }
             bw.close();
             fw.close();
+            
+            System.out.println("--> Save to file successfull !!!\n");
         } catch(Exception e) {
             System.out.println("ERROR: " + e);
         }
